@@ -64,22 +64,22 @@ void Array_append(struct Array *array, ELT_T element)
     array->elements[array->size-1] = element;
 }
 
-// ssize_t Array_linSearch(struct Array *Array,ssize_t target){
-
-//     for (size_t i = 0; i < Array->size; ++i) // check each index in the array
-//         if (Array->elements[i] == target) // if the element matches
-//             return i; // return index where it was found
-//     return -1; // not found => negative result
-// }
-
 ssize_t Array_linSearch(struct Array *Array,char *target){
-    printf("%s\n",*(Array->elements));
-    
-    // for (size_t i = 0; i < Array->size; ++i)
-    //     if (strcmp(*(Array->elements),target)==0)
-    //         return i;
-    // return -1; 
+
+    for (size_t i = 0; i < Array->size; ++i) // check each index in the array
+        if (strcmp(Array->elements[i],target) ==0) // if the element matches
+            return i; // return index where it was found
+    return -1; // not found => negative result
 }
+
+// ssize_t Array_linSearch(struct Array *Array,char *target){
+//     printf("%s\n",*(Array->elements));
+    
+//     for (size_t i = 0; i < Array->size; ++i)
+//         if (strcmp(*(Array->elements),target)==0)
+//             return i;
+//     return -1; 
+// }
 
 // ssize_t Array_binSearch(struct Array *array,ssize_t target){
 
@@ -98,13 +98,35 @@ ssize_t Array_linSearch(struct Array *Array,char *target){
 //     return -1; // not found => negative result
 // }
 
-void Array_insert(struct Array *array,char *element){
+ssize_t Array_binSearch(struct Array *Array,char *target){
+
+    ssize_t left=0,right=Array->size-1;
+
+    while(left<=right){
+        ssize_t mid=(left+right)/2;
+        
+        char *element=Array->elements[mid];
+        
+        if(strcmp(element,target) >0)right=mid-1;
+        else if(strcmp(element,target)<0)left=mid+1;
+        else if (strcmp(element,target)==0) return mid;
+
+    }
+
+    return -1; // not found => negative result
+}
+
+void Array_insert(struct Array *array,ELT_T element){
     Array_append(array,element);
     //printf("%d %s\n",1,*element);
-    Array_linSearch(array,element);
+
+    
     size_t index=array->size-1;
-    while(index > 0 && strcmp(array->elements[index-1],array->elements[index])<0){
-        swap(*(array->elements[index-1]),*(array->elements[index]));
+    while(index > 0 && strcmp(array->elements[index-1],array->elements[index])>0){
+        //swap(&(array->elements[index-1]),&(array->elements[index]));
+        char *tmp=array->elements[index-1];
+        array->elements[index-1]=array->elements[index];
+        array->elements[index]=tmp;
         --index;
     }
 }

@@ -34,10 +34,16 @@ int main(int argc, char **argv)
 	//Array_append(array, strdup(line));
 	// UN-COMMENT these two lines
 	
-	if (Array_linSearch(array, line) < 0)
-	    Array_insert(array, strdup(line));
+	// if (Array_linSearch(array, line) < 0)
+	//     Array_insert(array, strdup(line));
 
-		//printf("%d\n",Array_linSearch(array, line));
+	// 	//printf("%d\n",Array_linSearch(array, line));
+	
+    // }
+	if (Array_binSearch(array, line) < 0)
+		Array_insert(array, strdup(line));
+
+	//printf("%d\n",Array_linSearch(array, line));
 	
     }
 
