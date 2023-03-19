@@ -1,0 +1,31 @@
+The forbidden characters in URLs are:
+  ' ' space
+  '!' exclamation point
+  '#' hash
+  '$' dollar
+  '%' percent
+  '&' ampersand
+  ''' single quote
+  '(' left parenthesis
+  ')' right parenthesis
+  '*' aserisk
+  '+' plus
+  ',' comma
+  '/' slash
+  ':' colon
+  ';' semicolon
+  '=' equals
+  '?' question mark
+  '@' commercial at
+  '[' left bracket
+  ']' right bracket
+%20space
+%%20space
+%%%20space
+% %20space
+%  %20space
+%2%20space
+%2G%20space
+%200%20space
+%2F%20slash
+%2f%20slash

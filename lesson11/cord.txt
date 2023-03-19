@@ -1,0 +1,23 @@
+1つ目
+cc -o 11-1-Binary-Gray 11-1-Binary-Gray.c
+./11-1-Binary-Gray
+
+2個目
+
+cc -o 11-2-url-encorder 11-2-url-encorder.c
+echo "I/O: getting stuff in (and out?)." | ./11-2-url-encorder
+
+
+cc -o 11-2-urldecode 11-2-urldecode.c
+ echo "I/O: in (out?)." | ./11-2-url-encorder | ./11-2-urldecode
+
+3個目
+cc -o 11-3-base64encode 11-3-base64encode.c
+ echo "hello world" | ./11-3-base64encode
+
+cc -o 11-3-base64decode 11-3-base64decode.c
+echo "hello world" | ./11-3-base64encode | ./11-3-base64decode
+
+echo "kuas-studet" | ./11-3-base64encode | ./11-3-base64decode
+
+echo "123-ababab" | ./11-3-base64encode | ./11-3-base64decode

@@ -1,0 +1,23 @@
+1つ目
+make 13-tcp-server
+make 13-1-crient
+./13-tcp-server 9999 
+
+別で
+ ./13-1-crient localhost 9999
+
+2つ目
+make 13-2-tcp-server 
+make 13-2-crient 
+./13-2-tcp-server 9999  
+
+別で
+ ./13-2-crient localhost 9999
+
+ 3つ目
+ make 13-3-tcp-server 
+make 13-3-crient 
+./13-3-tcp-server 9999  
+
+別で
+ ./13-3-crient localhost 9999
